@@ -10,6 +10,16 @@ def cencode(text,key):
             %255)
     return output
 
+def cencodeh(text,key):
+    output = ""
+    random.seed(key)
+    for h in range(len(text)):
+        i = h + 1
+        char = hex((ord(text[h])+cscramble(i,key))%255)
+        while len(char)<2:
+            chara = "0" + chara
+        output = output + chara
+    return output
 
 def cscramble(iterate,key):
     interim = (iterate
