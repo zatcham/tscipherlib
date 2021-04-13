@@ -15,7 +15,8 @@ def cencodeh(text,key):
     random.seed(key)
     for h in range(len(text)):
         i = h + 1
-        char = hex((ord(text[h])+cscramble(i,key))%255)
+        chara = hex((ord(text[h])+cscramble(i,key))%255)
+        chara = chara[2:]
         while len(char)<2:
             chara = "0" + chara
         output = output + chara
