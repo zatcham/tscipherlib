@@ -41,7 +41,7 @@ def cdecode(array,key):
     return output
 
 def cdecodeh(stringin,key):
-    stredit = stringin
+    stredit = stringin.lower()
     if len(stringin)%2 == 1:
         stredit = "0" + stringin
     hexdigits = {"0" : 0 ,
