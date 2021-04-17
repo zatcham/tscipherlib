@@ -6,6 +6,9 @@ Use "from tscipherlib import *" to import this library
 cencode(text,key)
 This expects a string (text) and an integer (key), and will output an integer array with the encrypted characters in it.
 
+cencodeh(text,key)
+This expects a string (text) and an integer (key), and will output a hexadecimal string with the encrypted characters in it.
+
 cscramble(iterate,key)
 This is used internally by the cencode and cdecode functions
 
