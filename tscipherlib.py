@@ -62,9 +62,9 @@ def cdecodeh(stringin,key):
                  "f" : 15}
     
     array = []                 
-    for c in range(math.floor(len(stredit/2))):
+    for c in range(math.floor(len(stredit)/2)):
         ptr = c*2
-        array.append((hexdigits[ptr]*16)+hexdigits[ptr+1])
+        array.append((hexdigits[stredit[ptr]]*16)+hexdigits[stredit[ptr+1]])
         
 
     output = ""
