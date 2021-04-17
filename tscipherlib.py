@@ -40,6 +40,43 @@ def cdecode(array,key):
         output = output + (chr(maths%255))
     return output
 
+def cdecode(stringin,key):
+    stredit = stringin
+    if len(stringin)%2 == 1:
+        stredit = "0" + stringin
+    hexdigits = {"0" : 0 ,
+                 "1" : 1 ,
+                 "2" : 2 ,
+                 "3" : 3 ,
+                 "4" : 4 ,
+                 "5" : 5 ,
+                 "6" : 6 ,
+                 "7" : 7 ,
+                 "8" : 8 ,
+                 "9" : 9 ,
+                 "a" : 10 ,
+                 "b" : 11 ,
+                 "c" : 12 ,
+                 "d" : 13 ,
+                 "e" : 14 ,
+                 "f" : 15}
+    
+    array = []                 
+    for c in range(math.floor(len(stredit/2))):
+        ptr = c*2
+        array.append((hexdigits[ptr]*16)+hexdigits[ptr+1])
+        
+
+    output = ""
+    random.seed(key)
+    for h in range(len(array)):
+        i = h + 1
+        maths =(array[h]-cscramble(i,key))
+        output = output + (chr(maths%255))
+    return output
+
+
+
 #random.seed(5)
 #for i in range(5):
 #    print(random.randint(0,10000))
