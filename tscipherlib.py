@@ -40,7 +40,7 @@ def cdecode(array,key):
         output = output + (chr(maths%255))
     return output
 
-def cdecode(stringin,key):
+def cdecodeh(stringin,key):
     stredit = stringin
     if len(stringin)%2 == 1:
         stredit = "0" + stringin
