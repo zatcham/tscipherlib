@@ -15,5 +15,7 @@ This is used internally by the cencode and cdecode functions
 cdecode(array,key)
 this expects an integer array (array) and an integer (key), and will output a text string with the decrypted text.
 
+cdecodeh(text,key)
+This expects a string (hex) and an integer (key), and will output a text string with the decrypted text in non-hex format.
 
 you can run it standalone to test its functionality, and the effectiveness of the cipher. it will print the string "hello", followed by a plot of # symbols to test the randomness of the cipher.
