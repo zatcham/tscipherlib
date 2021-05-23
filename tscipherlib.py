@@ -1,14 +1,14 @@
 import math
 import random
 def cencode(text,key):
-    output = []
-    random.seed(key)
-    for h in range(len(text)):
-        i = h + 1
-        output.append(
-            (ord(text[h])+cscramble(i,key))
-            %255)
-    return output
+    output = []                                #make a clear buffer
+    random.seed(key)                           #seed random (not used)
+    for h in range(len(text)):                 # for every character:
+        i = h + 1                              # (some indexing weirdness)
+        output.append(                         # append to the buffer: 
+            (ord(text[h])+cscramble(i,key))    #   text ascii value plus scrambler output
+            %255)                              #   modulo 255 (should be 256 really, i should change this)
+    return output                              
 
 def cencodeh(text,key):
     output = ""
@@ -49,7 +49,7 @@ def cscramble(iterate,key):
         interime += interimd
         interim -= interime
     interim = interim % 255
-    return interim+25
+    return interim+255
                        
 def cdecode(array,key):
     output = ""
