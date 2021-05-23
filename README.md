@@ -1,21 +1,14 @@
 # tscipherlib
+
+This code was forked from https://github.com/tomrow/tscipherlib and converted into PHP.
+
 basic weak cipher
 
-Use "from tscipherlib import *" to import this library
+It has 4 functions:
+  - encodeTs (not yet fully tested)
+  - decipherTs
+  - scrambleTs
+  - newmod (modulo function to bypass PHP's modulo implamentation)
 
-cencode(text,key)
-This expects a string (text) and an integer (key), and will output an integer array with the encrypted characters in it.
 
-cencodeh(text,key)
-This expects a string (text) and an integer (key), and will output a hexadecimal string with the encrypted characters in it.
-
-cscramble(iterate,key)
-This is used internally by the cencode and cdecode functions
-
-cdecode(array,key)
-this expects an integer array (array) and an integer (key), and will output a text string with the decrypted text.
-
-cdecodeh(text,key)
-This expects a string (hex) and an integer (key), and will output a text string with the decrypted text in non-hex format.
-
-you can run it standalone to test its functionality, and the effectiveness of the cipher. it will print the string "hello", followed by a plot of # symbols to test the randomness of the cipher.
+It can be run standalone, and has a basic HTML form set up to enter an encrypted string and key. At a later date, I will implement encoding functions aswell.
